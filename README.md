@@ -1,9 +1,9 @@
 # Fullstact online shop (TypeScript, Next.js, BetterAuth, Drizzle, Neon postgreSQL, Resend)
 
-This code features fullstack online shop with authentification via betterAuth, password reset via email with Resend, user and admin roles, admin dashboard to easily add products and manage users, dynamic routes to each product page, middleware protection, products cart, reviews for products, profile page.
+This code features fullstack online shop with authentication via betterAuth, password reset via email with Resend, user and admin roles, admin dashboard to easily add products and manage users, dynamic routes to each product page, middleware protection, products cart, reviews for products, profile page.
 
 ------
-## 1. Authentification
+## 1. Authentication
 
 
 this code features fully functional login, signup, forgot password, reset password forms. made with Zod validation, Resend, BetterAuth, BetterAuth admin plugin, drizzle orm, and postgres database. 
@@ -37,9 +37,9 @@ first install dependancies, then create .env and fill it. it has to include
 <code>BETTER_AUTH_SECRET</code>
 <code>BETTER_AUTH_URL</code>
 <code>GOOGLE_CLIENT_ID</code> 
-<code>GOOGLE_CLIENT_SECRET</code>(for authentification with google, you can skip if you dont need it)
+<code>GOOGLE_CLIENT_SECRET</code>(for authentication with google, you can skip if you dont need it)
 <code>GITHUB_CLIENT_ID</code>
-<code>GITHUT_CLIENT_SECRET</code>(for authentification with github, you can also skip if you dont need it)
+<code>GITHUT_CLIENT_SECRET</code>(for authentication with github, you can also skip if you dont need it)
 <code>RESENT_API_KEY</code>
 after setting up env generate and push migration
 
