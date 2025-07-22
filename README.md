@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fullstact online shop (TypeScript, Next.js, BetterAuth, Drizzle, Neon postgreSQL, Resend)
 
-## Getting Started
+This code features fullstack online shop with authentification via betterAuth, password reset via email with Resend, user and admin roles, admin dashboard to easily add products and manage users, dynamic routes to each product page, middleware protection, products cart, reviews for products, profile page.
 
-First, run the development server:
+------
+## 1. Authentification
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+this code features fully functional login, signup, forgot password, reset password forms. made with Zod validation, Resend, BetterAuth, BetterAuth admin plugin, drizzle orm, and postgres database. 
+middleware uses <code>getCookieCache(request)</code> which provides fast and secure method of route protection. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 2. Admin Dashboard
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+dashboard provides a way to easily add new products and delete users. once you add a product there, a product page will be made automatically with reviews form for each product. you can also easily delete or update product details here.
 
-## Learn More
+## 3. Products and products cart 
 
-To learn more about Next.js, take a look at the following resources:
+once you add a product throught admin dashboard, a product page, a reviews form and add-to-cart functionality is automatically working. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 4. Profile page 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+i will be expanding functionality of profile page in future, but so far you can change your username there. it also uses zod validation just like signup and login forms. 
 
-## Deploy on Vercel
+# How to test it out? 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+first install dependancies, then create .env and fill it. it has to include 
+<code>DATABASE_URL </code>
+<code>BETTER_AUTH_SECRET</code>
+<code>BETTER_AUTH_URL</code>
+<code>GOOGLE_CLIENT_ID</code> 
+<code>GOOGLE_CLIENT_SECRET</code>(for authentification with google, you can skip if you dont need it)
+<code>GITHUB_CLIENT_ID</code>
+<code>GITHUT_CLIENT_SECRET</code>(for authentification with github, you can also skip if you dont need it)
+<code>RESENT_API_KEY</code>
+after setting up env generate and push migration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Important!
+you are given user role by default, to test admin functionality you need to give it to yourself in your database(it is easy, just type admin in role table)
+
+
